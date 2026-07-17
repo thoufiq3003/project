@@ -1,0 +1,747 @@
+/* ==========================================================================
+   GLOBAL VARIABLES & RESET (Modern Sports Theme)
+   ========================================================================== */
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;600;800&family=Oswald:wght@500;700&display=swap');
+
+:root {
+  --bg-main: #0f172a;       /* Deep Slate */
+  --bg-card: #1e293b;       /* Dark Navy */
+  --bg-input: #334155;      /* Slate Grey */
+  --border-color: #475569;
+  
+  --primary: #059669;       /* Sporty Green */
+  --primary-hover: #047857;
+  --accent-gold: #f59e0b;   /* Trophy Gold */
+  --danger: #ef4444;        /* Wicket Red */
+  --danger-hover: #dc2626;
+  --blue-accent: #3b82f6;
+  
+  --text-main: #f8fafc;
+  --text-muted: #94a3b8;
+  
+  --shadow-sm: 0 1px 2px rgba(0,0,0,0.2);
+  --shadow-md: 0 4px 12px rgba(0, 0, 0, 0.4);
+  --shadow-lg: 0 10px 25px rgba(0, 0, 0, 0.5);
+  
+  --radius-sm: 8px;
+  --radius-md: 12px;
+  --radius-lg: 20px;
+  
+  --transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  background-color: var(--bg-main);
+  color: var(--text-main);
+  font-family: 'Inter', sans-serif;
+  margin: 0;
+  padding: 0;
+  -webkit-font-smoothing: antialiased;
+}
+
+h1, h2, h3, .logo-title {
+  font-family: 'Oswald', sans-serif;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+/* ==========================================================================
+   LAYOUT STRUCTURES
+   ========================================================================== */
+.app-container {
+  max-width: 750px;
+  margin: 40px auto;
+  padding: 30px;
+  background-color: var(--bg-card);
+  border: 1px solid var(--border-color);
+  border-radius: var(--radius-lg);
+  box-shadow: var(--shadow-lg);
+}
+
+.main-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border-bottom: 2px solid var(--border-color);
+  padding-bottom: 16px;
+  margin-bottom: 30px;
+}
+
+.logo-title {
+  font-size: 24px;
+  color: var(--primary);
+  margin: 0;
+  text-shadow: 0 2px 4px rgba(0,0,0,0.3);
+}
+
+/* ==========================================================================
+   CARDS & PANELS
+   ========================================================================== */
+.card-panel {
+  background: rgba(15, 23, 42, 0.4);
+  border: 1px solid var(--border-color);
+  border-radius: var(--radius-md);
+  padding: 24px;
+  margin-bottom: 24px;
+  box-shadow: inset 0 2px 4px rgba(255,255,255,0.02);
+}
+
+.auth-card {
+  max-width: 400px;
+  margin: 60px auto;
+  padding: 40px;
+  background: linear-gradient(145deg, #1e293b, #0f172a);
+  border: 1px solid var(--border-color);
+  border-radius: var(--radius-lg);
+  text-align: center;
+  box-shadow: 0 15px 30px rgba(0,0,0,0.5);
+}
+
+.auth-card h2 {
+  color: var(--primary);
+  font-size: 28px;
+  margin-top: 0;
+  margin-bottom: 30px;
+}
+
+.section-title {
+  font-size: 18px;
+  color: var(--accent-gold);
+  margin-top: 0;
+  margin-bottom: 20px;
+  border-bottom: 1px dashed var(--border-color);
+  padding-bottom: 10px;
+}
+
+/* ==========================================================================
+   INPUTS & BUTTONS
+   ========================================================================== */
+.form-group { margin-bottom: 24px; }
+
+input, select, .form-input, .form-select {
+  width: 100%;
+  padding: 12px 16px;
+  margin: 8px 0;
+  background-color: var(--bg-input);
+  border: 1px solid var(--border-color);
+  border-radius: var(--radius-sm);
+  color: var(--text-main);
+  font-size: 14px;
+  font-family: 'Inter', sans-serif;
+  transition: var(--transition);
+  outline: none;
+}
+
+input:focus, select:focus {
+  border-color: var(--primary);
+  box-shadow: 0 0 0 3px rgba(5, 150, 105, 0.2);
+}
+
+/* Password Input Wrapper */
+.password-input-wrapper {
+  position: relative;
+  display: flex;
+  align-items: center;
+}
+
+.password-input-wrapper input {
+  flex: 1;
+  padding-right: 40px;
+}
+
+.password-toggle-btn {
+  position: absolute;
+  right: 12px;
+  background: none;
+  border: none;
+  cursor: pointer;
+  font-size: 18px;
+  padding: 8px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: var(--transition);
+  color: var(--text-muted);
+}
+
+.password-toggle-btn:hover {
+  transform: scale(1.2);
+  color: var(--primary);
+}
+
+button, .primary-btn, .secondary-btn {
+  padding: 12px 20px;
+  font-size: 15px;
+  font-weight: 600;
+  font-family: 'Inter', sans-serif;
+  border-radius: var(--radius-sm);
+  border: none;
+  cursor: pointer;
+  transition: var(--transition);
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+}
+
+.primary-btn {
+  background-color: var(--primary);
+  color: #fff;
+  box-shadow: 0 4px 6px rgba(5, 150, 105, 0.3);
+}
+
+.primary-btn:hover {
+  background-color: var(--primary-hover);
+  transform: translateY(-2px);
+  box-shadow: 0 6px 12px rgba(5, 150, 105, 0.4);
+}
+
+.secondary-btn {
+  background-color: transparent;
+  border: 1px solid var(--border-color);
+  color: var(--text-muted);
+}
+
+.secondary-btn:hover {
+  background-color: var(--bg-input);
+  color: var(--text-main);
+}
+
+.wide-btn { width: 100%; }
+.btn-sm { padding: 6px 12px; font-size: 13px; }
+
+.auth-link {
+  font-size: 13px;
+  color: var(--text-muted);
+  margin-top: 20px;
+  cursor: pointer;
+  transition: var(--transition);
+}
+.auth-link:hover { color: var(--primary); text-decoration: underline; }
+
+/* Header Actions - Buttons Container */
+.header-actions {
+  display: flex;
+  gap: 12px;
+  align-items: center;
+}
+
+.logout-btn {
+  background-color: var(--danger);
+  color: #fff;
+  padding: 8px 16px;
+  font-size: 13px;
+  font-weight: 600;
+  border: none;
+  border-radius: var(--radius-sm);
+  cursor: pointer;
+  transition: var(--transition);
+  box-shadow: 0 2px 4px rgba(239, 68, 68, 0.3);
+}
+
+.logout-btn:hover {
+  background-color: var(--danger-hover);
+  transform: translateY(-2px);
+  box-shadow: 0 4px 8px rgba(239, 68, 68, 0.4);
+}
+
+.logout-btn:hover {
+  background-color: var(--danger-hover);
+  transform: translateY(-2px);
+  box-shadow: 0 4px 8px rgba(239, 68, 68, 0.4);
+}
+
+/* Back Button Styling */
+.section-header {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  margin-bottom: 20px;
+  border-bottom: 2px solid var(--border-color);
+  padding-bottom: 16px;
+}
+
+.back-btn {
+  background-color: var(--bg-input);
+  color: var(--text-muted);
+  border: 1px solid var(--border-color);
+  padding: 8px 14px;
+  font-size: 13px;
+  font-weight: 600;
+  border-radius: var(--radius-sm);
+  cursor: pointer;
+  transition: var(--transition);
+  flex-shrink: 0;
+}
+
+.back-btn:hover {
+  background-color: var(--primary);
+  color: #fff;
+  border-color: var(--primary);
+  transform: translateX(-2px);
+}
+
+/* ==========================================================================
+   DASHBOARD & SETUP GRIDS
+   ========================================================================== */
+.dashboard-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 20px;
+  margin-top: 24px;
+}
+
+.dash-btn {
+  background: linear-gradient(145deg, var(--bg-input), var(--bg-card));
+  border: 1px solid var(--border-color);
+  color: var(--text-main);
+  padding: 30px;
+  border-radius: var(--radius-md);
+  font-size: 16px;
+  font-weight: 700;
+}
+
+.dash-btn:hover {
+  border-color: var(--primary);
+  transform: translateY(-3px);
+}
+
+.dash-btn.start-btn {
+  grid-column: span 2;
+  background: linear-gradient(145deg, var(--primary), var(--primary-hover));
+  border: none;
+  color: white;
+  font-size: 18px;
+}
+
+.setup-container, .player-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 24px;
+  margin-bottom: 24px;
+}
+
+.setup-card, .roster-col {
+  background: var(--bg-input);
+  padding: 20px;
+  border-radius: var(--radius-md);
+  border: 1px solid var(--border-color);
+}
+
+.params-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 20px;
+}
+
+/* ==========================================================================
+   LIVE SCORING (CORE)
+   ========================================================================== */
+.live-score-bar {
+  display: flex;
+  background: linear-gradient(to right, #0f172a, #1e293b);
+  border: 2px solid var(--border-color);
+  border-radius: var(--radius-md);
+  margin-bottom: 24px;
+  height: auto;
+  box-shadow: var(--shadow-md);
+}
+
+.score-team-section {
+  width: 50%;
+  padding: 16px;
+  border-right: 2px solid var(--border-color);
+}
+
+.score-match-section {
+  width: 50%;
+  padding: 16px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: flex-end;
+  background: rgba(5, 150, 105, 0.1);
+}
+
+.score-player-name { font-size: 16px; font-weight: 700; color: #fff; }
+.current-total { font-size: 28px; font-weight: 800; color: var(--accent-gold); font-family: 'Oswald', sans-serif;}
+.current-over { font-size: 14px; color: var(--text-muted); font-weight: 600; }
+
+.scoring-console {
+  background: var(--bg-input);
+  border: 1px solid var(--border-color);
+  padding: 24px;
+  border-radius: var(--radius-md);
+  margin-bottom: 24px;
+}
+
+.player-selects {
+  display: grid;
+  gap: 16px;
+  margin-bottom: 20px;
+}
+
+.select-wrapper label {
+  display: block;
+  font-size: 12px;
+  font-weight: 700;
+  color: var(--accent-gold);
+  margin-bottom: 6px;
+  text-transform: uppercase;
+}
+
+.runs-action-deck {
+  display: grid;
+  grid-template-columns: repeat(7, 1fr);
+  gap: 10px;
+  margin-bottom: 20px;
+}
+
+.run-btn {
+  height: 50px;
+  font-size: 18px;
+  font-weight: 800;
+  background: var(--bg-card);
+  border: 2px solid var(--border-color);
+  color: var(--text-main);
+}
+
+.run-btn:hover { background: #475569; }
+
+.run-btn.accent { color: var(--blue-accent); border-color: rgba(59, 130, 246, 0.3); background: rgba(59, 130, 246, 0.1); }
+.run-btn.boundaries { color: var(--primary); border-color: rgba(5, 150, 105, 0.3); background: rgba(5, 150, 105, 0.1); }
+.run-btn.wicket { color: var(--danger); border-color: rgba(239, 68, 68, 0.3); background: rgba(239, 68, 68, 0.1); }
+
+.free-hit-banner {
+  background: var(--danger);
+  color: white;
+  padding: 10px;
+  text-align: center;
+  border-radius: var(--radius-sm);
+  font-weight: 800;
+  margin-bottom: 20px;
+  animation: pulseBlink 1s infinite;
+  letter-spacing: 1px;
+}
+
+.extras-panel {
+  display: flex;
+  justify-content: center;
+  gap: 30px;
+  padding: 12px;
+  background: rgba(0,0,0,0.2);
+  border-radius: var(--radius-sm);
+  margin-bottom: 20px;
+}
+
+.extras-panel label { cursor: pointer; font-weight: 600; display: flex; align-items: center; gap: 8px; }
+
+/* ==========================================================================
+   TABLES (Scorecard & History)
+   ========================================================================== */
+.cric-table {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+.cric-table th {
+  color: var(--text-muted);
+  font-size: 12px;
+  text-transform: uppercase;
+  padding: 12px;
+  border-bottom: 2px solid var(--border-color);
+  text-align: center;
+}
+
+.cric-table td {
+  padding: 14px 12px;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+  text-align: center;
+  font-size: 14px;
+}
+
+.table-player-cell { font-weight: 600; color: #fff; display: block; }
+.bold-run-count { font-weight: 800; color: var(--accent-gold); font-size: 16px;}
+
+.out-status {
+  font-size: 11px;
+  font-weight: 700;
+  padding: 3px 8px;
+  border-radius: 12px;
+  display: inline-block;
+  margin-top: 4px;
+}
+.out-status.dismissed { background: rgba(239, 68, 68, 0.2); color: #fca5a5; }
+.out-status.notout { background: rgba(5, 150, 105, 0.2); color: #6ee7b7; }
+
+/* ==========================================================================
+   ANIMATIONS (The WOW Factor)
+   ========================================================================== */
+.animation-overlay {
+  position: fixed;
+  top: 0; left: 0; right: 0; bottom: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 9999;
+  pointer-events: none;
+  background: rgba(15, 23, 42, 0.85);
+  animation: fadeOut 2.5s forwards;
+  backdrop-filter: blur(4px);
+}
+
+.animation-overlay h1 {
+  font-size: 100px;
+  font-weight: 900;
+  letter-spacing: 8px;
+  text-shadow: 0 10px 30px rgba(0,0,0,0.8);
+  margin: 0;
+}
+
+.animation-overlay.four h1, .animation-overlay.six h1 {
+  color: var(--primary);
+  animation: zoomPop 0.8s cubic-bezier(0.175, 0.885, 0.32, 1.275) forwards;
+}
+
+.animation-overlay.wicket h1 {
+  color: var(--danger);
+  animation: shatterImpact 0.6s ease-in forwards;
+}
+
+.celebration-bounce {
+  text-align: center;
+  animation: trophyBounce 1.5s infinite alternate;
+}
+.finished-headline { font-size: 36px; color: var(--accent-gold); margin-bottom: 10px; }
+.finished-winner { font-size: 28px; color: var(--primary); }
+
+@keyframes pulseBlink {
+  0%, 100% { opacity: 1; }
+  50% { opacity: 0.5; }
+}
+
+@keyframes fadeOut {
+  0%, 70% { opacity: 1; }
+  100% { opacity: 0; visibility: hidden; }
+}
+
+@keyframes zoomPop {
+  0% { transform: scale(0.2) translateY(50px); opacity: 0; }
+  60% { transform: scale(1.1) translateY(-10px); opacity: 1; }
+  100% { transform: scale(1) translateY(0); opacity: 1; }
+}
+
+@keyframes shatterImpact {
+  0% { transform: scale(3) rotate(5deg); opacity: 0; filter: blur(10px); }
+  50% { transform: scale(0.9) rotate(-2deg); opacity: 1; filter: blur(0); }
+  100% { transform: scale(1) rotate(0); opacity: 1; }
+}
+
+@keyframes trophyBounce {
+  0% { transform: translateY(0); }
+  100% { transform: translateY(-15px); }
+}
+
+/* Utilities */
+.mt-20 { margin-top: 20px; }
+.mb-20 { margin-bottom: 20px; }
+.text-center { text-align: center; }
+
+@media (max-width: 600px) {
+  .setup-container, .player-grid, .params-grid, .dashboard-grid, .player-selects {
+    grid-template-columns: 1fr !important;
+  }
+  .dash-btn.start-btn { grid-column: span 1; }
+  .runs-action-deck { grid-template-columns: repeat(4, 1fr); }
+  .run-btn.wicket { grid-column: span 4; }
+  .score-team-section, .score-match-section { padding: 10px; }
+}
+
+
+/* ==========================================================================
+   NEW DASHBOARD STATS & PLAYER PROFILE UI
+   ========================================================================== */
+.stats-summary-bar {
+  display: flex;
+  gap: 20px;
+  margin-bottom: 24px;
+}
+
+.stat-box {
+  flex: 1;
+  background: rgba(5, 150, 105, 0.1);
+  border: 1px solid rgba(5, 150, 105, 0.3);
+  padding: 20px;
+  border-radius: var(--radius-md);
+  text-align: center;
+}
+
+.stat-box h3 {
+  color: var(--accent-gold);
+  font-size: 32px;
+  margin: 0 0 5px 0;
+}
+
+.stat-box p {
+  color: var(--text-muted);
+  margin: 0;
+  font-size: 14px;
+  text-transform: uppercase;
+  font-weight: 600;
+  letter-spacing: 1px;
+}
+
+.player-list-container {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  margin-top: 20px;
+  max-height: 400px;
+  overflow-y: auto;
+}
+
+.player-profile-card {
+  background: var(--bg-input);
+  border: 1px solid var(--border-color);
+  padding: 16px;
+  border-radius: var(--radius-sm);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.player-details h4 {
+  margin: 0 0 4px 0;
+  color: var(--primary);
+  font-size: 16px;
+}
+
+.player-details p {
+  margin: 0;
+  color: var(--text-muted);
+  font-size: 13px;
+}
+
+.player-actions {
+  display: flex;
+  gap: 10px;
+}
+
+.btn-edit {
+  background: rgba(59, 130, 246, 0.1);
+  color: #3b82f6;
+  border: 1px solid rgba(59, 130, 246, 0.3);
+  padding: 6px 12px;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+.btn-delete {
+  background: rgba(239, 68, 68, 0.1);
+  color: #ef4444;
+  border: 1px solid rgba(239, 68, 68, 0.3);
+  padding: 6px 12px;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+.btn-edit:hover { background: rgba(59, 130, 246, 0.2); }
+.btn-delete:hover { background: rgba(239, 68, 68, 0.2); }
+
+.history-card {
+  background: var(--bg-input);
+  border-left: 4px solid var(--primary);
+  padding: 16px;
+  border-radius: var(--radius-sm);
+  margin-bottom: 12px;
+}
+.history-card.tie { border-left-color: var(--accent-gold); }
+/* ==========================================================================
+   ADVANCED ANIMATED CHECKBOX & PLAYER LIST UI 
+   ========================================================================== */
+
+/* 1. Proper Alignment for the Row */
+.pool-item {
+  display: flex !important;
+  flex-direction: row !important;
+  align-items: center !important;
+  justify-content: flex-start !important;
+  gap: 15px !important;
+  padding: 12px 16px !important;
+  margin-bottom: 10px !important;
+  background: rgba(255, 255, 255, 0.03) !important;
+  border: 1px solid rgba(255, 255, 255, 0.05) !important;
+  border-radius: 8px !important;
+  cursor: pointer !important;
+  font-weight: 600 !important;
+  color: #f8fafc !important;
+  transition: all 0.25s ease !important;
+}
+
+/* Hover effect to highlight the player row */
+.pool-item:hover {
+  background: rgba(255, 255, 255, 0.08) !important;
+  border-color: rgba(255, 255, 255, 0.2) !important;
+  transform: translateX(4px) !important;
+}
+
+/* 2. Customizing the actual Checkbox */
+.pool-item input[type="checkbox"] {
+  appearance: none !important; 
+  -webkit-appearance: none !important;
+  width: 24px !important; 
+  height: 24px !important;
+  min-width: 24px !important;
+  margin: 0 !important;
+  padding: 0 !important;
+  background-color: transparent !important;
+  border: 2px solid #64748b !important;
+  border-radius: 6px !important;
+  cursor: pointer !important;
+  position: relative !important;
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1) !important;
+}
+
+/* 3. When Selected (Color changes and Bounce Animation) */
+.pool-item input[type="checkbox"]:checked {
+  background-color: var(--primary) !important;
+  border-color: var(--primary) !important;
+  animation: popBounce 0.4s ease forwards !important;
+}
+
+/* 4. Drawing the 'Tick' Mark inside */
+.pool-item input[type="checkbox"]:checked::after {
+  content: '' !important;
+  position: absolute !important;
+  left: 7px !important;
+  top: 3px !important;
+  width: 6px !important;
+  height: 12px !important;
+  border: solid white !important;
+  border-width: 0 2px 2px 0 !important;
+  transform: rotate(45deg) scale(0) !important;
+  animation: checkMarkReveal 0.3s 0.1s ease-out forwards !important;
+}
+
+/* 5. Disabled State (When player is already in another team) */
+.pool-item input[type="checkbox"]:disabled {
+  border-color: #334155 !important;
+  background-color: rgba(255,255,255,0.02) !important;
+  cursor: not-allowed !important;
+}
+
+/* --- ANIMATION KEYFRAMES --- */
+@keyframes popBounce {
+  0% { transform: scale(1); }
+  50% { transform: scale(1.25); }
+  100% { transform: scale(1); }
+}
+
+@keyframes checkMarkReveal {
+  0% { transform: rotate(45deg) scale(0); opacity: 0; }
+  100% { transform: rotate(45deg) scale(1); opacity: 1; }
+}
